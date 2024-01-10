@@ -1,6 +1,12 @@
 function countZeroes(arr) {
     let leftIndex = 0;
     let rightIndex = arr.length - 1;
+    if (arr[leftIndex] === 0){
+        return arr.length;
+    }
+    if (arr[rightIndex] === 1){
+        return 0;
+    }
     while (leftIndex <= rightIndex){
         let middleIndex = Math.floor((leftIndex + rightIndex)/2)
         if (arr[middleIndex] === 0 && arr[middleIndex - 1] === 1){
@@ -13,7 +19,6 @@ function countZeroes(arr) {
             rightIndex = middleIndex;
         }
     }
-    return 0;
 }
 
 module.exports = countZeroes
